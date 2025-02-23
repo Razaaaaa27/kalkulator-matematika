@@ -12,13 +12,15 @@ const {
     maksimum, 
     minimum, 
     bulatkan 
-} = require('./solution');
+} = require('./solution'); // Import fungsi dari file solution.js
 
+// Membuat antarmuka input/output menggunakan readline
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+// Menampilkan menu pilihan operasi kalkulator
 function tampilkanMenu() {
     console.log('\n=== Kalkulator Sederhana ===');
     console.log('1. Penjumlahan');
@@ -37,13 +39,15 @@ function tampilkanMenu() {
     console.log('=========================');
 }
 
+// Fungsi utama kalkulator
 function kalkulator() {
-    tampilkanMenu();
-    
+    tampilkanMenu(); // Menampilkan menu setiap kali fungsi dipanggil
+
+    // Meminta pengguna memilih operasi
     rl.question('Pilih operasi (0-12): ', (pilihan) => {
-        if (pilihan === '0') {
+        if (pilihan === '0') { // Keluar jika pengguna memilih 0
             console.log('Terima kasih telah menggunakan kalkulator!');
-            rl.close();
+            rl.close(); // Menutup antarmuka readline
             return;
         }
 
@@ -51,10 +55,10 @@ function kalkulator() {
         if (['1', '2', '3', '4', '5', '8', '10', '11'].includes(pilihan)) {
             rl.question('Masukkan angka pertama: ', (a) => {
                 rl.question('Masukkan angka kedua: ', (b) => {
-                    const num1 = parseFloat(a);
+                    const num1 = parseFloat(a); // Konversi input ke angka
                     const num2 = parseFloat(b);
-                    hitung(pilihan, num1, num2);
-                    kalkulator();
+                    hitung(pilihan, num1, num2); // Hitung hasil berdasarkan pilihan
+                    kalkulator(); // Tampilkan kembali menu
                 });
             });
         } 
@@ -62,17 +66,18 @@ function kalkulator() {
         else if (['6', '7', '9', '12'].includes(pilihan)) {
             rl.question('Masukkan angka: ', (n) => {
                 const num = parseFloat(n);
-                hitung(pilihan, num);
-                kalkulator();
+                hitung(pilihan, num); // Hitung hasil untuk operasi satu angka
+                kalkulator(); // Tampilkan kembali menu
             });
         } 
         else {
-            console.log('Pilihan tidak valid!');
-            kalkulator();
+            console.log('Pilihan tidak valid!'); // Menangkap input tidak valid
+            kalkulator(); // Tampilkan kembali menu
         }
     });
 }
 
+// Fungsi untuk menghitung hasil sesuai pilihan
 function hitung(pilihan, a, b = null) {
     try {
         switch(pilihan) {
@@ -114,9 +119,9 @@ function hitung(pilihan, a, b = null) {
                 break;
         }
     } catch (error) {
-        console.log(`Error: ${error.message}`);
+        console.log(`Error: ${error.message}`); // Menangkap dan menampilkan error
     }
 }
 
 console.log('Selamat datang di Kalkulator Sederhana!');
-kalkulator();
+kalkulator(); // Memulai kalkulator
