@@ -77,47 +77,46 @@ function hitung(pilihan, a, b = null) {
     try {
         switch(pilihan) {
             case '1':
-                console.log(Hasil: ${tambah(a, b)});
+                console.log(`Hasil: ${tambah(a, b)}`);
                 break;
             case '2':
-                console.log(Hasil: ${kurang(a, b)});
+                console.log(`Hasil: ${kurang(a, b)}`);
                 break;
             case '3':
-                console.log(Hasil: ${kali(a, b)});
+                console.log(`Hasil: ${kali(a, b)}`);
                 break;
             case '4':
-                console.log(Hasil: ${bagi(a, b)});
+                console.log(`Hasil: ${bagi(a, b)}`);
                 break;
             case '5':
-                console.log(Hasil: ${pangkat(a, b)});
+                console.log(`Hasil: ${pangkat(a, b)}`);
                 break;
             case '6':
-                console.log(Hasil: ${faktorial(a)});
+                console.log(`Hasil: ${faktorial(a)}`);
                 break;
             case '7':
-                console.log(Bilangan prima? ${isPrima(a) ? 'True' : 'false'});
+                console.log(`Bilangan prima? ${isPrima(a) ? 'Ya' : 'Tidak'}`);
                 break;
             case '8':
-                console.log(Hasil: ${modulus(a, b)});
+                console.log(`Hasil: ${modulus(a, b)}`);
                 break;
             case '9':
-                console.log(Hasil: ${absolut(a)});
+                console.log(`Hasil: ${absolut(a)}`);
                 break;
             case '10':
-                console.log(Hasil: ${maksimum(a, b)});
+                console.log(`Hasil: ${maksimum(a, b)}`);
                 break;
             case '11':
-                console.log(Hasil: ${minimum(a, b)});
+                console.log(`Hasil: ${minimum(a, b)}`);
                 break;
             case '12':
-                console.log(Hasil: ${bulatkan(a)});
+                console.log(`Hasil: ${bulatkan(a)}`);
                 break;
         }
     } catch (error) {
-        console.log(Error: ${error.message});
+        console.log(`Error: ${error.message}`);
     }
 }
 
 console.log('Selamat datang di Kalkulator Sederhana!');
 kalkulator();
-
