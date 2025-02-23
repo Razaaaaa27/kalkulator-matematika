@@ -120,3 +120,4 @@ function hitung(pilihan, a, b = null) {
 
 console.log('Selamat datang di Kalkulator Sederhana!');
 kalkulator();
+
